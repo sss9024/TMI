@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #F4F6F8;
+  height: 100%
+}
+
+
+@keyframes sparkle {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 200% 100%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.typeButton{
+  color: black;
+  transition: all 0.7s ease-out;
+}
+.typeButton:hover {
+  color: white;
+}
+  
+.typeButtonActive {
+  display: inline-block;
+  position: relative;
+  transition: all 0.7s ease-out;
+  z-index:4;
+}
+.typeButtonActive:hover {
+  color: white;
+}
+.typeButtonActive:before {
+  animation: sparkle 16s infinite linear;
+  background: linear-gradient(90deg, #7FEFBD 0%, #FFF689 11%, #EC0B43 22%, #7FEFBD 33%, #FFF689 44%, #EC0B43 55%, #7FEFBD 66%, #FFF689 77%, #EC0B43 88%, #7FEFBD 100%);
+  background-size: 500% 100%;
+  content:"";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  filter: blur(3px);
+  z-index: -3;
+}

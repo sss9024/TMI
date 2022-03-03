@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: org.springframework.samples.petclinic.owner.OwnerControllerTests
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 4.549 s <<< FAILURE! - in org.springframework.samples.petclinic.owner.OwnerControllerTests
+testProcessUpdateOwnerFormHasErrors  Time elapsed: 0.735 s  <<< FAILURE!
+java.lang.AssertionError: View name expected:<owners/createOrUpdateOwnerFor> but was:<owners/createOrUpdateOwnerForm>
+	at org.springframework.samples.petclinic.owner.OwnerControllerTests.testProcessUpdateOwnerFormHasErrors(OwnerControllerTests.java:167)
+
+testInitUpdateOwnerForm  Time elapsed: 0.034 s  <<< FAILURE!
+java.lang.AssertionError: View name expected:<owners/createOrUpdateOwnerFor> but was:<owners/createOrUpdateOwnerForm>
+	at org.springframework.samples.petclinic.owner.OwnerControllerTests.testInitUpdateOwnerForm(OwnerControllerTests.java:149)
+

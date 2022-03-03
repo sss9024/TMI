@@ -1,0 +1,35 @@
+before_script:
+  - echo "Before script section"
+  - echo "For example you might run an update here or install a build dependency"
+  - echo "Or perhaps you might print out some debugging details"
+  - CI=false
+   
+after_script:
+  - echo "After script section"
+  - echo "For example you might do some cleanup here"
+
+cache:
+  paths:
+    - frontend/node_modules/
+    - backend/TmiProject/.m2/repository/
+
+build-frontend:
+  only:
+    changes:
+      - frontend/**/*
+  image: node:latest
+  stage: build
+  script:
+    - cd frontend
+    - npm i
+    - npm run build
+   
+build-main-server:
+  only:
+    changes:
+      - backend/TmiProject/**/*
+  image: maven:latest
+  stage: build
+  script:
+    - cd backend/TmiProject
+    - mvn clean package -Dmaven.repo.local=.m2/repository
